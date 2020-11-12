@@ -9,7 +9,7 @@
    --mff-sidebar-color: var(--foreground);
    --mff-tab-border-radius: 0px;
    --mff-tab-color: var(--foreground);
-   --mff-tab-font-family: "Cantarell", sans;
+   --mff-tab-font-family: "Noto Sans", sans;
    --mff-tab-font-size: 11pt;
    --mff-tab-font-weight: 400;
    --mff-tab-height: 25px;
@@ -24,7 +24,7 @@
    --mff-urlbar-results-color: #fff;
    --mff-urlbar-results-font-family: "Cantarell", serif;
    --mff-urlbar-results-font-size: 12pt;
-   --mff-urlbar-results-font-weight: 700;
+   --mff-urlbar-results-font-weight: 400;
    --mff-urlbar-results-url-color: var(--color15);
   /*   --mff-tab-selected-bg: linear-gradient(90deg, rgba(232,74,95,1) 0%, rgba(255,132,124,1) 50%, rgba(254,206,168,1) 100%); */
   /*   --mff-urlbar-font-weight: 600; */
@@ -51,12 +51,9 @@
   background: var(--mff-tab-selected-bg) !important;
 }
 
-/*.tab-text[selected="true"] {
-  font-family: var(--mff-tab-font-family);
-  font-weight: var(--mff-tab-font-weight);
+ .tab-text[selected="true"] {
   font-size: var(--mff-tab-font-size) !important;
-  color: var(--mff-bg);
-}*/
+}
 
 .tab-background:not[visuallyselected] {
   background: var(--mff-tab-selected-bg) !important;
@@ -247,7 +244,10 @@ toolbar {
 
 .toolbar-items {
   background-color: var(--mff-bg) !important;
+    font-family: var(--mff-tab-font-family);
+
 }
+
 
 #sidebar-search-container {
   background-color: var(--mff-sidebar-bg) !important;
