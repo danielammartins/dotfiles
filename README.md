@@ -1,10 +1,30 @@
-<p align="center"><a name="top" href="#envelope-overview"><img src="https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/.assets/header_.png"></a></p>
+<p align="center"><a name="top" href="#"><img src="https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/.assets/header_.png"></a></p>
 
 <h2 align="center"> Preview </h2>
 
+<h3 align="center"> Cherry Blossom </h3>
+
+![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/cherryblossom.png)
+
+<h3 align="center"> Urban </h3>
+
+![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/urban.png)
+
+<h3 align="center"> Flowers </h3>
+
+![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/flowers.png)
+
+<h3 align="center"> Coffee </h3>
+
+![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/coffee.png)
+
+<h3 align="center"> Foggy Mountain </h3>
+
 ![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/foggy-mountain.png)
 
-## :envelope: Overview
+## :sparkles: Thanks for visiting! 
+
+To give you an idea on how this works, I use `wpgtk` with templates to make setting color schemes across many applications convenient. Each color scheme has its own corresponding GTK and icon themes.
 
 -  **OS:** Manjaro
 -  **DE:** Plasma
@@ -12,10 +32,10 @@
 -  **Terminal:** Konsole
 -  **Shell:** zsh + Oh My Zsh + Powerlevel10k
 -  **Terminal Font:** SF Mono Powerline
--  **System Font:** SF UI Text
+-  **System Font:** SF Pro Text
 -  **Bar/Panel:** Latte-Dock
 -  **File Manager:** ~~Dolphin~~ Thunar
--  **Editor:** VS Code
+-  **Editor:** VS Code, Vim
 -  **Browser:** Firefox
 -  **Music Player:** Spotify & ncmpcpp
 
@@ -25,20 +45,19 @@ Firefox CSS is based on [minimal-functional-fox](https://github.com/mut-ex/minim
 
 Startpage source: https://notabug.org/nytly/home
 
-Latte layout is based on [Moe Layout](https://store.kde.org/p/1373008/). Make sure to install the required widgets if you're going to use it.
+Latte layout is based on [Moe Layout](https://store.kde.org/p/1373008/).
 
 ncmpcpp config is from [elenapan](https://github.com/elenapan/dotfiles/blob/master/config/ncmpcpp/config) and [owl4ce](https://github.com/owl4ce/dotfiles/blob/master/.ncmpcpp/config)
 
 Materia GTK themes and Papirus icons are made using [oomox](https://github.com/themix-project/oomox)
 
-## :pushpin: Important stuff
+## :pushpin: Dependencies
 
--  [Latte-Dock](https://github.com/KDE/latte-dock) & [Moe Layout](https://store.kde.org/p/1373008/)
+-  [Latte-Dock](https://github.com/KDE/latte-dock) (git version)
 -  [wpgtk](https://github.com/deviantfero/wpgtk) & [pywal](https://github.com/dylanaraps/pywal)
 -  [qt5-styleplugins](https://github.com/qt/qtstyleplugins) ([AUR](https://aur.archlinux.org/packages/qt5-styleplugins/), can also be installed with `pacman`)
--  [CullaX](https://www.opendesktop.org/p/1278039/)
 
-## :paperclip: Optional stuff
+## :paperclip: Recommendations
 
 -  [Spicetify-cli](https://github.com/khanhas/spicetify-cli) (make sure to install [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish) as well.)
 - VS Code Extension - [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme)
@@ -47,38 +66,144 @@ Materia GTK themes and Papirus icons are made using [oomox](https://github.com/t
 -  [Zathura-Pywal](https://github.com/GideonWolfe/Zathura-Pywal)
 -  [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)
 -  [betterdiscordctl](https://github.com/bb010g/betterdiscordctl) & [pywal-discord](https://github.com/FilipLitwora/pywal-discord)
+- [Tabliss](https://tabliss.io/)
+- [Animated Image Wallpaper](https://store.kde.org/p/1339104/)
 
 ## :hammer_and_wrench: Setup
 
 **(work in progress)**
 
-If you know how to use `wpgtk`, just copy my templates and import the color scheme.
-
 Note: I just got started ricing back in August so I'm very new to this. I don't guarantee anything to be working as intended.
 
-1. Install the programs mentioned above.
+Set your Global Theme to Breeze Dark before you proceed.
 
-2. For `wpgtk`, install the GTK template as instructed [here](https://github.com/deviantfero/wpgtk/wiki/Installation#default-templates) (skip this if you're going to use my GTK themes). For custom templates, follow the documentation. I have a template for `kdeglobals`, `Konsole`, and `CullaX`. You may copy the values but make sure to add them manually from the GUI, as the files use symbolic links.
+**Install the dependencies:**
 
-	When you add a template, you will be asked to locate the specific file. Here's the location for each file if you're going to use my templates:
+- ```bash
+  # Use your helper of choice
+  yay -S latte-dock-git wpgtk-git qt5-styleplugins python-pywal
+  ```
+<details open>
+<summary><strong>Clone and copy most of the stuff</strong></summary>
+  
+- ```bash
+  git clone https://github.com/ComplexPlatform/KDE-dotfiles
+    ```
+- ```bash
+  # Copy .local, .config, .themes, and .ncmpcpp to your home directory.
+  cd KDE-dotfiles/ && cp -r {.local,.config,.themes,.ncmpcpp} ~/
+  ```
+   
+</details>
 
-	+ `kdeglobals` - `~/.config/kdeglobals`
-	+ `Konsole` - `~/.local/share/konsole/wpgtk.colorscheme` (copy the theme first from this repo)
-	+ `CullaX` - `~/.local/share/plasma/desktoptheme/CullaX/colors`
+To remove title bars and add active/inactive frame colors, follow [this guide](https://github.com/esjeon/krohnkite#removing-title-bars)
 
-3. For removing the title bar and adding active/inactive window frame colors, follow [this guide.](https://github.com/waltereikrem/KWin-TilingGuide/) (I recommend using `Krohnkite` for tiling.)
-4. Launch `Latte-Dock`, import my layout, then apply.
-5. Launch `wpgtk`. under Colors tab, click import and choose a `.json` file from [color schemes](https://github.com/ComplexPlatform/KDE-dotfiles/tree/master/color%20schemes). Under Wallpaper tab, click set.
+To change your Latte layout, right click on your dock/panel > Layouts > pick your layout of choice.
 
-	If you're using `Spicetify` with `Dribbblish` installed, copy [color.ini](https://github.com/ComplexPlatform/KDE-dotfiles/blob/master/.config/spicetify/Themes/Dribbblish/color.ini) from this repo to `~/.config/spicetify/Themes/Dribbblish/`. Replace when prompted.
+<details open>
+  <summary><strong>Extract Icons</strong></summary>
+  
+   - ```bash
+     cd ~/.local/share/icons/
+     ```
+   - ```bash
+     tar -Jxvf Foggy-Mountain.tar.xz && tar -Jxvf Coffee.tar.xz && tar -Jxvf Flowers.tar.xz && tar -Jxvf Urban.tar.xz && tar -Jxvf CherryBlossom.tar.xz
+     ```
+   - ```bash
+   	 # Delete leftover archives
+     rm -r ~/.local/share/icons/{Foggy-Mountain.tar.xz,Coffee.tar.xz,Flowers.tar.xz,Urban.tar.xz,CherryBlossom.tar.xz}
+     ```
+     
+</details>
 
-	Afterwards, run the following:
+<details open>
+  <summary><strong>wpgtk</strong></summary>
 
-	```
-	spicetify config color_scheme pywal
-	spicetify apply
-	```
+1. Add wallpapers and import color schemes:
 
-6. Go to System Settings. For Plasma Style, set it to CullaX. For Application Style, set it to gtk2. Click `Configure GNOME/GTK Application Style...`, set the GTK2 and GTK3 theme to FlatColor if you're using wpgtk's GTK template. For icons, just copy my custom Papirus icons to `~/.local/share/icons` and apply.
+- ```bash
+  # Assuming you're in KDE-Dotfiles directory
+  # Add wallpapers
+  wpg -a walls/foggy-mountain_01.jpg
+  wpg -a walls/coffee.jpg
+  wpg -a walls/flowers.jpg
+  wpg -a walls/urban.jpg
+  wpg -a walls/cherryblossom.jpg
+  ```
+- ```bash
+  # Assuming you're in KDE-Dotfiles directory
+  # Import color schemes
+  wpg -i foggy-mountain_01.jpg colorschemes/foggy-mountain.json
+  wpg -i coffee.jpg colorschemes/coffee.json
+  wpg -i flowers.jpg colorschemes/flowers.json
+  wpg -i urban.jpg colorschemes/urban.json
+  wpg -i cherryblossom.jpg colorschemes/cherryblossom.json
+  ```
 
-If wpgtk doesn't work for some reason, go to Options tab and make sure `pywal` is selected under `Select your backend:`. Click save. Then go to Wallpapes tab, add a random image, and click set after it fetches the colors. Import the color scheme again, click save, and then click set once again.
+2. Add templates:
+
+- ```bash
+  # Backups are automatically made just in case something goes wrong.
+  wpg -ta ~/.config/kdeglobals
+  wpg -ta ~/.local/share/konsole/wpgtk.colorscheme
+  wpg -ta ~/.local/share/plasma/desktoptheme/CullaX/colors
+  ```
+
+3. Add variables/keywords to the templates:
+
+- ```bash
+  # Identify the templates` filenames first on ~/.config/wpg/templates
+  # Replace <filename>.base with yours
+  # Assuming you're in KDE-dotfiles directory
+  cd wpgtktemplates
+
+  # For dark color schemes:
+  cat kdeglobals-dark.base > ~/.config/wpg/templates/<your_kdeglobals>.base
+
+  # For light color schemes:
+  cat kdeglobals-light.base > ~/.config/wpg/templates/<your_kdeglobals>.base
+  
+  cat colors.base > ~/.config/wpg/templates/<your_cullax_colors>.base
+  cat konsole.base > ~/.config/wpg/templates/<your_konsole>.base
+  ```
+
+4. Set the color scheme:
+
+- ```bash
+  wpg -s <scheme>.jpg
+  # Replace <scheme> with your color scheme of choice.
+  # For example
+  wpg -s Flowers.jpg
+  ```
+
+Unfortunately, you have to set your wallpaper manually.
+</details>
+
+If you're using `Spicetify` with `Dribbblish`, run the following:
+
+```bash
+xrdb -merge ~/.cache/wal/colors.Xresources
+spicetify config color_scheme pywal
+spicetify apply
+```
+
+<details open>
+<summary><strong>Set Plasma theme</strong></summary>
+  
+ - System Settings > Plasma Style, set it to CullaX.
+ - System Settings > Application Style, set it to gtk2. Click `Configure GNOME/GTK Application Style...`, set the GTK2 and GTK3 theme your theme of choice.
+- System Settings > Icons, set the icon theme to your theme of choice.
+
+To remove the titlebar buttons:
+- System Settings > Application Style > Window Decorations > Titlebar Buttons, drag the buttons and drop them down to the list.
+
+To change the titlebar size:
+- System Settings > Application Style > Window Decorations, click the edit icon on `Breeze`. Change button size to whatever you want.
+
+</details>
+
+## :sparkling_heart: Credits
+
+- [owl4ce](https://github.com/owl4ce/)
+- [elenapan](https://github.com/elenapan/)
+- [addy-dclxvi](https://github.com/addy-dclxvi/)
