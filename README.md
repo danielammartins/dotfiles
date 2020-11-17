@@ -1,28 +1,6 @@
 <p align="center"><a name="top" href="#"><img src="https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/.assets/header_.png"></a></p>
 
-<h2 align="center"> Preview </h2>
 
-<h3 align="center"> Cherry Blossom </h3>
-
-![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/cherryblossom.png)
-
-<h3 align="center"> Urban </h3>
-
-![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/urban.png)
-
-<h3 align="center"> Flowers </h3>
-
-![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/flowers.png)
-
-<h3 align="center"> Coffee </h3>
-
-![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/coffee.png)
-
-<h3 align="center"> Foggy Mountain </h3>
-
-![](https://raw.githubusercontent.com/ComplexPlatform/KDE-dotfiles/master/previews/foggy-mountain.png)
-
-## :sparkles: Thanks for visiting! 
 
 To give you an idea on how this works, I use `wpgtk` with templates to make setting color schemes across many applications convenient. Each color scheme has its own corresponding GTK and icon themes.
 
@@ -30,16 +8,13 @@ To give you an idea on how this works, I use `wpgtk` with templates to make sett
 -  **DE:** Plasma
 -  **WM:** KWin
 -  **Terminal:** Konsole
--  **Shell:** zsh + Oh My Zsh + Powerlevel10k
 -  **Terminal Font:** SF Mono Powerline
--  **System Font:** SF Pro Text
+-  **System Font:** Noto Sans
 -  **Bar/Panel:** Latte-Dock
--  **File Manager:** ~~Dolphin~~ Thunar
+-  **File Manager:** Dolphin
 -  **Editor:** VS Code, Vim
 -  **Browser:** Firefox
--  **Music Player:** Spotify & ncmpcpp
-
-The fetch shown in the preview above is [fet.sh](https://github.com/6gk/fet.sh)
+-  **Music Player:** Spotify
 
 Firefox CSS is based on [minimal-functional-fox](https://github.com/mut-ex/minimal-functional-fox)
 
@@ -47,7 +22,6 @@ Startpage source: https://notabug.org/nytly/home
 
 Latte layout is based on [Moe Layout](https://store.kde.org/p/1373008/).
 
-ncmpcpp config is from [elenapan](https://github.com/elenapan/dotfiles/blob/master/config/ncmpcpp/config) and [owl4ce](https://github.com/owl4ce/dotfiles/blob/master/.ncmpcpp/config)
 
 Materia GTK themes and Papirus icons are made using [oomox](https://github.com/themix-project/oomox)
 
