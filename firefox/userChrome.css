@@ -110,7 +110,7 @@
 } */
 
 .tab-line {
-  display: none !important;
+  /*display: none !important;*/
 }
 
 .tabbrowser-tab {
@@ -135,6 +135,11 @@
 
 .tab-icon-sound {
   display: none !important;
+}
+
+.tabbrowser-tab[pinned] {
+    font-size: 0;
+    
 }
 
 /*
