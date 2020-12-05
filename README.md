@@ -1,25 +1,23 @@
-I use `wpgtk` with templates to make setting color schemes across many applications convenient. Each color scheme has its own corresponding GTK and icon themes.
+Work in Progress
 
 -  **OS:** Manjaro
 -  **DE:** Plasma
--  **WM:** KWin
+-  **WM:** KWin w/ Krohnkite
 -  **Terminal:** Konsole
--  **Terminal Font:** SF Mono Powerline
+-  **Terminal Font:** Noto Sans
 -  **System Font:** Noto Sans
 -  **Bar/Panel:** Latte-Dock
 -  **File Manager:** Dolphin
--  **Editor:** VS Code, Vim
 -  **Browser:** Firefox
 -  **Music Player:** Spotify
 
-Firefox CSS is based on [minimal-functional-fox](https://github.com/mut-ex/minimal-functional-fox)
+Firefox CSS is based on [minimal-functional-fox](https://github.com/mut-ex/minimal-functional-fox) with a few custom tweaks
 
-Startpage source: https://notabug.org/nytly/home
-
-Latte layout is based on [Moe Layout](https://store.kde.org/p/1373008/).
-
-
-Materia GTK themes and Papirus icons are made using [oomox](https://github.com/themix-project/oomox)
+Latte layout is custom and requires adicional widgets:
+-  Virtual Desktop Bar
+-  Latte Spacer
+-  macOS BS Inline Battery
+-  Better Inline Clock
 
 ## :pushpin: Dependencies
 
@@ -29,47 +27,38 @@ Materia GTK themes and Papirus icons are made using [oomox](https://github.com/t
 
 ## :paperclip: Recommendations
 
--  [Spicetify-cli](https://github.com/khanhas/spicetify-cli) (make sure to install [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish) as well.)
-- VS Code Extension - [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme)
--  [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+-  [Spicetify-cli](https://github.com/khanhas/spicetify-cli) (make sure to install [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish) as well.) (Spotify has to be either from the AUR or Flatpak)
+-  VS Code Extension - [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme) (uses pywall to get theme's colors) or [Nord Native](https://marketplace.visualstudio.com/items?itemName=divanvisagie.nord-native-theme)
 -  [Krohnkite](https://store.kde.org/p/1281790/)
 -  [Zathura-Pywal](https://github.com/GideonWolfe/Zathura-Pywal)
--  [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)
 -  [betterdiscordctl](https://github.com/bb010g/betterdiscordctl) & [pywal-discord](https://github.com/FilipLitwora/pywal-discord)
-- [Tabliss](https://tabliss.io/)
-- [Animated Image Wallpaper](https://store.kde.org/p/1339104/)
 
 ## :hammer_and_wrench: Setup
 
-**(work in progress)**
-
-Note: I just got started ricing back in August so I'm very new to this. I don't guarantee anything to be working as intended.
-
-Set your Global Theme to Breeze Dark before you proceed.
+**Global Theme:** Breeze Dark 
 
 **Install the dependencies:**
 
 - ```bash
-  # Use your helper of choice
+  # both yay and pacman work
   yay -S latte-dock-git wpgtk-git qt5-styleplugins python-pywal
   ```
 <details open>
 <summary><strong>Clone and copy most of the stuff</strong></summary>
   
 - ```bash
-  git clone https://github.com/ComplexPlatform/KDE-dotfiles
+  git clone https://github.com/danielammartins/mydotfiles
     ```
 - ```bash
   # Copy .local, .config, .themes, and .ncmpcpp to your home directory.
-  cd KDE-dotfiles/ && cp -r {.local,.config,.themes,.ncmpcpp} ~/
+  cd mydotfiles/ && cp -r {.local,.config,.themes} ~/
   ```
    
 </details>
 
 To remove title bars and add active/inactive frame colors, follow [this guide](https://github.com/esjeon/krohnkite#removing-title-bars)
 
-To change your Latte layout, right click on your dock/panel > Layouts > pick your layout of choice.
-
+Import the Latter layout from /misc
 <details open>
   <summary><strong>Extract Icons</strong></summary>
   
@@ -77,11 +66,11 @@ To change your Latte layout, right click on your dock/panel > Layouts > pick you
      cd ~/.local/share/icons/
      ```
    - ```bash
-     tar -Jxvf Foggy-Mountain.tar.xz && tar -Jxvf Coffee.tar.xz && tar -Jxvf Flowers.tar.xz && tar -Jxvf Urban.tar.xz && tar -Jxvf CherryBlossom.tar.xz
+     tar -Jxvf Foggy-Mountain.tar.xz 
      ```
    - ```bash
    	 # Delete leftover archives
-     rm -r ~/.local/share/icons/{Foggy-Mountain.tar.xz,Coffee.tar.xz,Flowers.tar.xz,Urban.tar.xz,CherryBlossom.tar.xz}
+     rm -r ~/.local/share/icons/{Foggy-Mountain.tar.xz}
      ```
      
 </details>
@@ -94,21 +83,12 @@ To change your Latte layout, right click on your dock/panel > Layouts > pick you
 - ```bash
   # Assuming you're in KDE-Dotfiles directory
   # Add wallpapers
-  wpg -a walls/foggy-mountain_01.jpg
-  wpg -a walls/coffee.jpg
-  wpg -a walls/flowers.jpg
-  wpg -a walls/urban.jpg
-  wpg -a walls/cherryblossom.jpg
+  wpg -a walls/ngf28mu50oy51.png
   ```
 - ```bash
   # Assuming you're in KDE-Dotfiles directory
   # Import color schemes
   wpg -i foggy-mountain_01.jpg colorschemes/foggy-mountain.json
-  wpg -i coffee.jpg colorschemes/coffee.json
-  wpg -i flowers.jpg colorschemes/flowers.json
-  wpg -i urban.jpg colorschemes/urban.json
-  wpg -i cherryblossom.jpg colorschemes/cherryblossom.json
-  ```
 
 2. Add templates:
 
@@ -130,9 +110,6 @@ To change your Latte layout, right click on your dock/panel > Layouts > pick you
   # For dark color schemes:
   cat kdeglobals-dark.base > ~/.config/wpg/templates/<your_kdeglobals>.base
 
-  # For light color schemes:
-  cat kdeglobals-light.base > ~/.config/wpg/templates/<your_kdeglobals>.base
-  
   cat colors.base > ~/.config/wpg/templates/<your_cullax_colors>.base
   cat konsole.base > ~/.config/wpg/templates/<your_konsole>.base
   ```
@@ -143,10 +120,9 @@ To change your Latte layout, right click on your dock/panel > Layouts > pick you
   wpg -s <scheme>.jpg
   # Replace <scheme> with your color scheme of choice.
   # For example
-  wpg -s Flowers.jpg
+  wpg -s ngf28mu50oy51.png
   ```
 
-Unfortunately, you have to set your wallpaper manually.
 </details>
 
 If you're using `Spicetify` with `Dribbblish`, run the following:
