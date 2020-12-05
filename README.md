@@ -151,7 +151,7 @@ To change the titlebar size:
 ## :pushpin: Apps to install
 
 **Dev**
--  [VS Code](https://aur.archlinux.org/packages/visual-studio-code-bin/
+-  [VS Code](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 -  Vim
 -  IntelliJ
 -  PyCharm
