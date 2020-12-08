@@ -168,6 +168,7 @@ To change the titlebar size:
 
 **Misc**
 -  Discord
+-  Slack
 -  [Spotify](https://aur.archlinux.org/packages/spotify/)
 -  gnome-keyring
 -  qBitTorrent
