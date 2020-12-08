@@ -18,14 +18,15 @@
    --mff-tab-soundplaying-bg: var(--color9);
    --mff-urlbar-color: var(--color7);
    --mff-urlbar-focused-color: var(--color7);
-   --mff-urlbar-font-family: "Cantarell", serif;
-   --mff-urlbar-font-size: 12pt;
-   --mff-urlbar-font-weight: 700;
+   --mff-urlbar-font-family: "Noto Sans", sans;
+   --mff-urlbar-font-size: 11pt;
+   --mff-urlbar-font-weight: 400;
    --mff-urlbar-results-color: #fff;
-   --mff-urlbar-results-font-family: "Cantarell", serif;
-   --mff-urlbar-results-font-size: 12pt;
+   --mff-urlbar-results-font-family: "Noto Sans", sans;
+   --mff-urlbar-results-font-size: 11pt;
    --mff-urlbar-results-font-weight: 400;
    --mff-urlbar-results-url-color: var(--color15);
+
   /*   --mff-tab-selected-bg: linear-gradient(90deg, rgba(232,74,95,1) 0%, rgba(255,132,124,1) 50%, rgba(254,206,168,1) 100%); */
   /*   --mff-urlbar-font-weight: 600; */
 
@@ -37,7 +38,9 @@
   --panel-disabled-color: #f9f9fa80;
   --toolbar-bgcolor: var(--mff-bg) !important;
   --urlbar-separator-color: transparent !important;
+
 }
+
 
 /*
   _____ _   ___ ___
@@ -46,6 +49,32 @@
    |_/_/ \_\___/___/
 
 */
+
+/* Replace favicon on tabs with close button on hover */
+ 
+.tabbrowser-tab:not(:hover) .tab-close-button{ display:none; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{ display:block !important; }
+ 
+ 
+.tabbrowser-tab:not([pinned]):hover  .tab-icon-image {
+  display: none !important;
+}
+ 
+.tabbrowser-tab:hover  .tab-throbber,
+.tabbrowser-tab:hover  .tab-icon-image,
+.tabbrowser-tab:hover .tab-sharing-icon-overlay,
+.tabbrowser-tab:hover  .tab-icon-overlay,
+.tabbrowser-tab:hover  .tab-label-container,
+.tabbrowser-tab:hover  .tab-icon-sound {
+  -moz-box-ordinal-group: 2 !important;
+}
+ 
+.tabbrowser-tab .tab-close-button {
+  margin-left: -2px !important;
+  margin-right: 4px !important;
+}
+
+/* ends here */
 
 .tab-background[selected="true"] {
   background: var(--mff-tab-selected-bg) !important;
@@ -60,7 +89,7 @@
   opacity: 0.5 !important;
 }
 
-/* This positions the tabs under the navaigator container */
+/* This positions the tabs under the navigator container */
 #titlebar {
   -moz-box-ordinal-group: 3 !important;
 }
@@ -79,9 +108,11 @@
   margin-inline-end: 0px !important;
 }
 
-.tab-close-button {
- /*display: none !important;*/
+/* Removes new tab button*/
+#tabs-newtab-button {
+  display: none;
 }
+
 
 .tab-text {
   font-family: var(--mff-tab-font-family);
@@ -92,7 +123,6 @@
 
 #tabbrowser-tabs {
   --tab-loading-fill: #af9687 !important;
-
 }
 
 .tab-label-container:not([textoverflow]) {
@@ -102,15 +132,6 @@
   width: 50% !important;
   max-width: 50% !important;
   min-width: 50% !important;
-}
-
-/* .tab-label-container::after {
-  content: "?" !important;
-
-} */
-
-.tab-line {
-  /*display: none !important;*/
 }
 
 .tabbrowser-tab {
@@ -128,19 +149,10 @@
   background-color: var(--mff-tab-soundplaying-bg) !important;
 }
 
-/*#tabs-newtab-button {
-  list-style-image: url("add.svg") !important;
-  opacity: 0.7;
-}*/
-
 .tab-icon-sound {
   display: none !important;
 }
 
-.tabbrowser-tab[pinned] {
-    font-size: 0;
-    
-}
 
 /*
   _____ ___   ___  _    ___   _   ___
@@ -177,13 +189,6 @@
 /* filter: drop-shadow(0 0 0.75rem crimson); */
 }
 
-#urlbar-results {
-  font-family: var(--mff-urlbar-results-font-family);
-  font-weight: var(--mff-urlbar-results-font-weight);
-  font-size: var(--mff-urlbar-results-font-size) !important;
-  color: var(--mff-urlbar-results-color) !important;
-}
-
 .urlbarView-row[type="bookmark"] > span{
   color: #929284 !important;
 }
@@ -198,11 +203,13 @@
   font-weight: var(--mff-urlbar-results-font-weight);
   font-size: var(--mff-urlbar-font-size) !important;
 }
+
 /*
 .urlbarView-favicon, .urlbarView-type-icon {
   display: none !important;
-}
-*/
+}*/
+
+
 #urlbar-input {
   font-size: var(--mff-urlbar-font-size) !important;
   color: var(--mff-urlbar-color) !important;
@@ -211,14 +218,12 @@
   text-align: center !important;
 }
 
-#tracking-protection-icon-container, #identity-box {
-  display: none;
-}
-
+/*
 #back-button > .toolbarbutton-icon{
   --backbutton-background: transparent !important;
   border: none !important;
-}
+}*/
+
 
 #back-button {
   list-style-image: url("left-arrow.svg") !important;
@@ -232,9 +237,6 @@ toolbar {
   background-image: none !important;
 }
 
-#urlbar-background {
-  /*opacity: 0.98 !important;*/
-}
 
 #navigator-toolbox, toolbaritem {
   border: none !important;
@@ -249,10 +251,9 @@ toolbar {
 
 .toolbar-items {
   background-color: var(--mff-bg) !important;
-    font-family: var(--mff-tab-font-family);
+  font-family: var(--mff-tab-font-family);
 
 }
-
 
 #sidebar-search-container {
   background-color: var(--mff-sidebar-bg) !important;
@@ -296,7 +297,6 @@ toolbar#nav-bar {
 #urlbar-input:focus {
   color: var(--mff-urlbar-focused-color) !important;
 }
-
 
 .megabar[breakout-extend="true"]:not([open="true"]) > #urlbar-background {
   box-shadow: none !important;
@@ -360,3 +360,5 @@ image#sidebar-icon {
 toolbarseparator {
   display: none;
 }
+
+

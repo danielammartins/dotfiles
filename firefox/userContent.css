@@ -1,0 +1,86 @@
+@import url("userChrome.css");
+:root {
+  
+  --newtab-textbox-focus-color: var(--mff-bg) !important;
+--newtab-textbox-border-color: var(--mff-bg) !important;
+
+--newtab-topsites-background-color: var(--mff-bg) !important;
+--newtab-textbox-focus-boxshadow:var(--mff-bg) !important;
+}
+
+/*Removes blue box shandow from search bar*/
+.search-wrapper input {
+	border-color: #282828 !important;
+	box-shadow: none !important;
+}
+
+.new-tab-button {
+  display: none;
+}
+
+#tab-newtab-button {
+  display: none;
+}
+
+/* Removes white loading page */
+@-moz-document url(about:blank), url(about:newtab), url(about:home) {
+    html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
+      background: var(--mff-bg) !important;
+    }
+  }
+  
+@-moz-document url-prefix(about:home), url-prefix(about:newtab) {
+  
+ 
+
+
+    body {
+        background-color: #181818 !important;
+    }
+
+    #newtab-search-text {
+      background-color: #181818 !important;
+      color: white !important;
+      border: none;
+  }
+
+  .contentSearchSuggestionTable {
+    display: none;
+}
+    
+    .icon-settings {
+        background-color: #282828 !important;
+    }
+    
+    #searchSubmit {
+       display: none;  
+    }
+    
+    #newtab-search-text {
+        border:none;
+    }
+    
+    .search.wrapper {
+        border: none;
+    }
+    
+    .search-inner-wrapper {
+        border:none;
+        color: #282828;
+    }
+
+}
+
+  /* Hide scrollbar 
+
+  :root{
+    scrollbar-width: none !important;
+  }
+
+
+  @-moz-document url(about:privatebrowsing) {
+
+  :root{
+    scrollbar-width: none !important;
+  }
+  }*/

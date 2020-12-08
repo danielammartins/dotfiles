@@ -47,13 +47,13 @@
 /*Light*/
 .search-wrapper input {
 	transition: all 0.3s ease !important;
-	background: var(--light_color2) var(--newtab-search-icon) 12px center
+	background: #fff var(--newtab-search-icon) 12px center
 		no-repeat !important;
 	background-size: 20px !important;
 	border: 1px solid !important;
-	border-color: var(--light_color3) !important;
+	border-color: #e00a06 !important;
 	box-shadow: none !important;
-	color: var(--other_color3) !important;
+	color: #fff !important;
 }
 /*Dark*/
 [lwt-newtab-brighttext] .search-wrapper input {
