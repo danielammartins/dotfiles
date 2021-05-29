@@ -4,7 +4,7 @@ Work in Progress
 -  **DE:** Plasma
 -  **WM:** KWin w/ Krohnkite
 -  **Terminal:** Konsole
--  **Terminal Font:** Noto Sans
+-  **Terminal Font:** Noto Sans Mono
 -  **System Font:** Noto Sans
 -  **Bar/Panel:** Latte-Dock
 -  **File Manager:** Dolphin
