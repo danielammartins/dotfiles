@@ -1,5 +1,3 @@
-Work in Progress
-
 -  **OS:** Manjaro
 -  **DE:** Plasma
 -  **WM:** KWin w/ Krohnkite
