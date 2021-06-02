@@ -11,7 +11,7 @@ Work in Progress
 -  **Browser:** Firefox
 -  **Music Player:** Spotify
 
-Firefox CSS is based on [minimal-functional-fox](https://github.com/mut-ex/minimal-functional-fox) with a few custom tweaks
+Firefox CSS is based on [minimal-functional-fox](https://github.com/mut-ex/minimal-functional-fox)
 
 Latte layout is custom and requires adicional widgets:
 -  Virtual Desktop Bar
